@@ -1,21 +1,38 @@
-# [Work In Progress] AMWA NMOS System Resource API
+# AMWA NMOS Device Connection Management Specification (IS-05)
 
-This repository contains details of this AMWA Specification for getting the System Resource
+## GitHub Pages documentation
 
-## Getting started
+If you are reading this you are on the gh-pages branch, which is used to generate the documentation from the master and other branches, and from releases.  These are served at https://amwa-tv.github.io/nmos-device-connection-management/.
 
-Readers are advised to be familiar with:
-* The JT-NM Reference Architecture (http://jt-nm.org/)
-* The [overview of Networked Media Open Specifications](https://github.com/AMWA-TV/nmos)
-* The [NMOS Discovery and Registration Specification](https://github.com/AMWA-TV/nmos-discovery-registration) (IS-04)
+## Generating the documentation
 
-Readers should then read the [documentation](docs/) in this repository, and the [APIs](APIs/), which are written in RAML -- if a suitable tool is not available for reading this, then [this](APIs/generateHTML) will create HTML versions.
+If you make any changes to the repo please do the following:
 
-## Contents
+Make sure you have the correct version for raml2html installed. For RAML 1.0 you should use the latest version:
 
-* README.md -- This file
-* [docs/](docs/) -- Documentation targeting those implementing APIs and clients.
-* [APIs/](APIs/) -- Normative specifications of APIs
-* [examples/](examples/) -- Example JSON requests and responses for APIs
-* [LICENSE](LICENSE) -- Licenses for software and text documents
-* [NOTICE](NOTICE) -- Disclaimer
+``sudo npm install -g raml2html``
+
+_Note: recent versions of raml2html may hang if you use them directly (or via generateHTML) on the RAML files, due to the location of schema files.  The procedure below includes a workaround until we resolve this._
+
+Clone this repo (if you haven't already), checkout the gh-pages branch and make:
+
+``git checkout gh-pages``
+
+``make``
+
+This runs scripts to:
+- clone the repo from AMWA's GitHub
+- for each branch and release (with some exceptions) extract documentation, APIs and schemas
+  - making HTML renders of the RAML APIs
+- for each branch and release create indexes for the documentation, APIs and schemas
+- make links to what will later be the HTML renders of the Markdown documentation
+
+## Updating AMWA's GitHub
+
+You can push the updated documentation to AMWA's GitHub with.
+
+``make push``
+
+Admins must be to do this after merging PRs etc (until this is automated with CircleCI at some point).
+
+This then triggers a build of the GitHub Pages. This happens on GitHub's servers, using Jekyll to render the HTML.  This includes rendering the Markdown content, but we have to do the RAML ourselves.  
