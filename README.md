@@ -2,7 +2,7 @@
 
 ## GitHub Pages documentation
 
-If you are reading this you are on the gh-pages branch, which is used to generate the documentation from the master and other branches, and from releases.  These are served at https://amwa-tv.github.io/nmos-device-connection-management/.
+If you are reading this you are on the gh-pages branch, which is used to generate the documentation from the master and other branches, and from releases.  These are served at <https://amwa-tv.github.io/nmos-device-connection-management/>.
 
 ## Generating the documentation
 
@@ -21,13 +21,26 @@ Clone this repo (if you haven't already), checkout the gh-pages branch and make:
 ``make``
 
 This runs scripts to:
+
 - clone the repo from AMWA's GitHub
 - for each branch and release (with some exceptions) extract documentation, APIs and schemas
   - making HTML renders of the RAML APIs
 - for each branch and release create indexes for the documentation, APIs and schemas
 - make links to what will later be the HTML renders of the Markdown documentation
 
-## Updating AMWA's GitHub
+## Viewing locally (optional)
+
+To check the documentation without pushing:
+
+- See [this page](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll)
+  - you need to have Ruby, Bundler, Jekyll installed
+- Run this from the top level directory in the gh-pages branch:
+
+  ``bundle exec jekyll server``
+
+- Goto <http://127.0.0.1:4000/>
+
+You can install jekyll locally ## Updating AMWA's GitHub
 
 You can push the updated documentation to AMWA's GitHub with.
 
