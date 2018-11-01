@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ ! -d node_modules/.bin ]; then
+    echo "fatal: Cannot find build tools (have you done 'make build-tools?')"
+    exit 1
+fi
+
+PATH=$PWD/node_modules/.bin:$PATH
+
 function extract {
     checkout=$1
     target_dir=$2
