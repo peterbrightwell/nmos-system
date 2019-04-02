@@ -1,6 +1,7 @@
-# AMWA NMOS System Resource Specification
+# AMWA IS-09 NMOS System API Specification [Work In Progress]
 
-This is a specification for how NMOS Nodes (also known as "Media Nodes") can find resources that are common across a system.
+The NMOS System API allows an NMOS Node (also known as a "Media Node") to find Resources that are common across a system.
+This enables the Node to start, or re-start, in a well defined way that is consistent with the environment it's running in.
 
 It has been developed by the [Advanced Media Workflow Association](https://www.amwa.tv) as part of the [Networked Media Open Specifications](https://www.nmos.tv) initative.
 
