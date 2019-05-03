@@ -1,0 +1,5 @@
+language: generic
+
+install: make build-tools
+
+build: make
