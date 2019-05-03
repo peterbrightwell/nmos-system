@@ -17,6 +17,6 @@ Once AMWA has approved a Specification, its documentation and API links will be 
 
 ## Branches
 
-[master](branches/master/)
+[v1.0-dev](branches/v1.0-dev/)
 
 ## Tags (Releases)
