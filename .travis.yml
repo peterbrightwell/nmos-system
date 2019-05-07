@@ -1,5 +1,7 @@
 language: generic
 
-build:
+install: true
+ 
+script:
   - git checkout gh-pages
-  - make build-tools build
+  - make
