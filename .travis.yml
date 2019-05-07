@@ -6,4 +6,5 @@ install:
   - make build-tools
 
 script:
-  - make
+  - make clean build
+  - make push
