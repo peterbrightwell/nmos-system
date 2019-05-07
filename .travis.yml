@@ -1,9 +1,9 @@
 language: generic
 
 install:
-  - git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
+  - git clone --single-branch --branch gh-pages https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
   - cd $TRAVIS_REPO_SLUG
-  - git checkout -qf gh-pages
+  - make build-tools
 
 script:
   - make
